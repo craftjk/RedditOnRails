@@ -1,0 +1,13 @@
+  <h2>(<%= @link.votes %>) <%= link_to(@link.title,@link.url) %> [<%= link_to('up',upvote_link_url) %>|<%= link_to('down',downvote_link_url) %>]</h2>
+
+
+
+<h2>Comments</h2>
+<ul>
+  <% comments_by_parent = @link.comments_by_parent%>
+  <% comments_by_parent[nil].each do |top_level_comments| %>
+    <li>
+      <%= comment_partial(top_level_comments, comments_by_parent) %>
+    </li>
+  <% end %>
+</ul>

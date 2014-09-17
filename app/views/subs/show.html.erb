@@ -1,0 +1,7 @@
+<h1><%= @sub.name %></h1>
+<hr>
+<% @sub.links.each do |link| %>
+<h3><%= link.votes %> &mdash; <%= link_to(link.title,link.url) %></h3>
+<%= link_to(link.body,link) %><hr>
+
+<% end %>
